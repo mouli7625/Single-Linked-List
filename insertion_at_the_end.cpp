@@ -27,6 +27,13 @@ void insertAtTheTail(Node* &head,int val)
     }
     temp->next=new_node;
 }
+
+void insertAtFirst(Node* &head, int val)
+{
+	Node* new_node=new Node(val);
+	new_node->next= head;
+	head=new_node;
+}
 void print(Node* head)
 {
     Node* temp=head;
@@ -45,6 +52,9 @@ int main()
     insertAtTheTail(head, 2);
     insertAtTheTail(head, 3);
     insertAtTheTail(head, 4);
+    print(head);
+    //insert at the Starting of LinkedList
+    insertAtFirst(head, 77);
     print(head);
     return 0;
 }
