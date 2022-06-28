@@ -34,6 +34,20 @@ void insertAtFirst(Node* &head, int val)
 	new_node->next= head;
 	head=new_node;
 }
+
+int searchNode(Node* &head, int val)
+{
+    Node* temp=head;
+    while(temp !=NULL)
+    {
+        if(temp->data==val)
+        {
+            return 1;
+        }
+        temp=temp->next;
+    }
+    return 0;
+}
 void print(Node* head)
 {
     Node* temp=head;
@@ -48,6 +62,7 @@ void print(Node* head)
 int main()
 {
     Node* head=NULL;
+    //insert at the Tail of LinkedList
     insertAtTheTail(head, 1);
     insertAtTheTail(head, 2);
     insertAtTheTail(head, 3);
@@ -56,5 +71,8 @@ int main()
     //insert at the Starting of LinkedList
     insertAtFirst(head, 77);
     print(head);
+    //searching value
+    cout<<searchNode(head, 1)<<endl;
+    cout<<searchNode(head, 99)<<endl;
     return 0;
 }
